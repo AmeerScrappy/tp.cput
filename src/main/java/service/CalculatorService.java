@@ -12,6 +12,7 @@ package service;
  */
 public interface CalculatorService {
     
-   int add(int a, int b);
-    
+   int addInt(int a, int b);
+   double addDouble(double a, double b);
+   
 }

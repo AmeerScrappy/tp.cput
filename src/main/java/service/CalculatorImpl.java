@@ -12,9 +12,13 @@ package service;
  */
 public class CalculatorImpl implements CalculatorService{
 
-    public int add(int a, int b) {
+    public int addInt(int a, int b) {
         
         return a + b;
     }
+      
+    public double addDouble(double a, double b){
         
+        return a + b;
+    }
 }

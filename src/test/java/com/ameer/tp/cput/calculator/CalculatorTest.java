@@ -2,12 +2,11 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ */          
 
 package com.ameer.tp.cput.calculator;
 
 import org.testng.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -35,7 +34,9 @@ public class CalculatorTest {
      @Test
      public void add() {
      
-         Assert.assertEquals(service.add(5, 6), 11);
+         Assert.assertEquals(service.addInt(5, 6), 11);
+         Assert.assertEquals(service.addDouble(5.0, 6.0), 11.0);
+         //Assert.assertEquals(this, service);
      }
 
     @BeforeClass
