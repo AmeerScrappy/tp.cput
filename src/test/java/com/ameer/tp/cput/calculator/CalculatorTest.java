@@ -71,7 +71,10 @@ public class CalculatorTest {
          
      }
      
-   
+     @Test
+     public void AssertFail(){
+         Assert.fail(service.failPass(msg));
+     }
      
     @BeforeClass
     public static void setUpClass() throws Exception {
