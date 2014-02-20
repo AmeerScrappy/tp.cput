@@ -23,8 +23,14 @@ public class CalculatorTest {
     
     public static CalculatorService service;
     
+    String word;
+    Integer number;
+    String msg;
+    
     public CalculatorTest() {
        
+        word = "Something";
+        msg = "Deliberate fail";
         
     }
 
@@ -32,13 +38,41 @@ public class CalculatorTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void add() {
+     public void AssertNumbers() {
      
          Assert.assertEquals(service.addInt(5, 6), 11);
          Assert.assertEquals(service.addDouble(5.0, 6.0), 11.0);
-         //Assert.assertEquals(this, service);
      }
 
+     @Test
+     public void AssertComparison(){
+         
+         Assert.assertSame(service.checkNum(5, 5), true);
+         Assert.assertNotSame(service.checkNum(5, 5), false);
+     }
+     
+     @Test
+     public void AssertTruth(){
+         
+         Assert.assertTrue(service.checkTrue(false));
+     }
+     
+     @Test
+     public void AssertFalse(){
+         
+         Assert.assertFalse(service.checkFalse(false));
+     }
+     
+     @Test
+     public void AssertNull(){
+         
+         Assert.assertNotNull(service.checkNotNull(word));
+         Assert.assertNull(service.checkNull(number));
+         
+     }
+     
+   
+     
     @BeforeClass
     public static void setUpClass() throws Exception {
         
