@@ -6,6 +6,7 @@
 
 package com.ameer.tp.cput.calculator;
 
+import java.util.ArrayList;
 import org.junit.Ignore;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -41,7 +42,7 @@ public class CalculatorTest {
      @Test
      public void AssertNumbers() {
      
-         Assert.assertEquals(service.addInt(5, 6), 11);
+         Assert.assertEquals(service.addInt(5, 6), 11, msg);
          Assert.assertEquals(service.addDouble(5.0, 6.0), 11.0);
      }
 
@@ -68,13 +69,27 @@ public class CalculatorTest {
      public void AssertNull(){
          
          Assert.assertNotNull(service.checkNotNull(word));
-         Assert.assertNull(service.checkNull(number));
-         
+         Assert.assertNull(service.checkNull(number));         
      }
      
      @Ignore
      public void AssertFail(){
          Assert.fail(service.failPass(msg));
+     }
+     
+     @Test(expectedExceptions = ArithmeticException.class)
+     public void AssertException(){
+         
+         service.numException(5);
+     }
+     
+     @Test
+     public void AsserArrays(){
+         
+         String[] actual = new String[] {"Megan","Tristan","Ameer","Wesley","Jonathan"};
+         String[] var = new String[] {"Megan","Tristan","Ameer","Wesley","Jonathan"};
+         
+         Assert.assertEquals(actual, var);
      }
      
     @BeforeClass

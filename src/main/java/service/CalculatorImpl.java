@@ -65,4 +65,13 @@ public class CalculatorImpl implements CalculatorService{
     
         return a;
     }
+    
+    public Integer numException(Integer a) throws ArithmeticException{
+        
+        a = a/0;
+        
+        return a;
+    }
+    
+    
 }

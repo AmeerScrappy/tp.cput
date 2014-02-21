@@ -21,4 +21,5 @@ public interface CalculatorService {
    String checkNotNull(String a);
    Integer checkNull(Integer a);
    String failPass(String a);
+   Integer numException(Integer a);
 }
